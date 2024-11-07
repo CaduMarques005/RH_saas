@@ -21,6 +21,15 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'telefone',
+        'nascimento',
+        'salario',
+        'admissao',
+        'permissao',
+        'endereco_id',
+        'cargo_id',
+        'beneficio_id',
+        'contrato_id'
     ];
 
     /**
@@ -44,5 +53,9 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function beneficio() {
+        $this->BelongsTo(Beneficio::class);
     }
 }
